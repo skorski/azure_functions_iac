@@ -2,6 +2,7 @@
 
 This repo shows how to automatically deploy a python azure function with the appropriate application insights instance.
 The user can deploy the function to any region using the variables defined in `terraform/variables.tf`.
+They can be specified in a separate file, like `terraform.tfvars` or on the command line via the `-var` command.
 
 The python function is packaged and deployed using the `func azure` commands.
 These are likely to be installed if the user is doing local development.
@@ -78,6 +79,8 @@ Python 3.6 is the latest supported by azure functions?
 Ran it with conda environment set to 3.6.
 It found python 3.8.5 and was happy.
 The primary grumble was python 3.7.9.
+This was very confusing and may have to do with the underlying azure func program.
+Newer versions of python should be supported. https://pypi.org/project/azure-functions/
 
 Going through hello world [azure functions](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python)
 
