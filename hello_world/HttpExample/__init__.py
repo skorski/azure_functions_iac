@@ -16,7 +16,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if name:
         if name.lower() == "dan":
-            return func.HttpResponse(f"Hello, {name}. It's time to check the bread.")
+            return func.HttpResponse(f"Hello, {name}. It's time to check the pork.")
         else:
             return func.HttpResponse(f"Hello, {name}. Function called successfully.")
     else:
