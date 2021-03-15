@@ -25,6 +25,17 @@ Getting going...
 1. `terraform apply -var="project=example"` push changes into azure.
 1. `terraform destroy` remove all traces of your work.
 
+## CI/CD
+The easiest method of continually deploying this function is:
+1. Deploy the initial version of the app using the `terraform apply` command.
+1. Push the code into Github.
+1. Authenticate azure function deployment with the appropriate branch / repo in github [docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-continuous-deployment).
+   This will add the appropriate steps into the github repo under `.github/workflows`.
+1. Push code as normal.  It will be automatically deployed.
+
+We recommend using master for deployments and implementing strict PR methods.
+
+
 ## Resources
 
 primary documentation
