@@ -87,7 +87,7 @@ resource "azurerm_storage_container" "deployments" {
 data "archive_file" "python_source" {
   type = "zip"
   output_path = "files/test.zip"
-  source_dir = "../hello_world/"
+  source_dir = "../HttpExample/"
 }
 
 resource "time_sleep" "wait_30_seconds" {
@@ -102,6 +102,6 @@ resource "null_resource" "func_deploy" {
     src_hash = "${data.archive_file.python_source.output_sha}"
   }
   provisioner "local-exec" {
-    command = "cd ../hello_world && func azure functionapp publish ${azurerm_function_app.functions.name}"
+    command = "cd .. && func azure functionapp publish ${azurerm_function_app.functions.name}"
   }
 }

@@ -1,6 +1,8 @@
 .venv
 .vscode
 terraform/.terraform
+terraform/helloworldfunc.tfplan
+terraform/*.tfplan
 
 bin
 obj

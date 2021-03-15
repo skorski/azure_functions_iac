@@ -8,9 +8,12 @@ The python function is packaged and deployed using the `func azure` commands.
 These are likely to be installed if the user is doing local development.
 In CI/CD scenarios, these tools may have to be installed.
 
-The `hello_world` folder contains the python code that is to be deployed.
+The root folder contains the python code that is to be deployed.
 These files are zipped with a sha hash recorded for the output.
 Terraform can track the value of the hash and then automatically redeploy when changes are made.
+This may not work outside of the `HttpExample` directory.
+See `terraform\main.tf:90` for more details.
+We recommend users leverage the raw `func azure` commands when doing local development. 
 
 Getting going...
 
